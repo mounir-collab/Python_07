@@ -8,8 +8,27 @@ class ArtifactCard(Card):
         self.effect = effect
 
     def play(self, game_state: dict) -> dict:
-        pass
+        if ( self.is_playable(game_state['mana'])) is True:
+            game_state["mana"] -= self.cost
+            return { "card_played" : self.name , 
+                "mana_used" : self.cost ,
+                "effect" : self.effect
+                }
+        return {"error": "Not enough mana"}
 
     def activate_ability(self) -> dict:
-        pass
+        if self.durability <= 0:
+            return {
+                "artifact": self.name,
+                "status": "broken",
+                "effect": None
+            }
+
+        self.durability -= 1
+
+        return {
+            "artifact": self.name,
+            "effect": self.effect,
+            "durability_remaining": self.durability
+        }
 
