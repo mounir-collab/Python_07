@@ -5,23 +5,21 @@ from ex1.ArtifactCard import ArtifactCard
 import random
 
 
-
 class Deck:
 
     def __init__(self):
-        self.cards : list[Card] = []
+        self.cards: list[Card] = []
 
     def add_card(self, card: Card) -> None:
-        if isinstance(card , Card):
+        if isinstance(card, Card):
             self.cards.append(card)
 
     def remove_card(self, card_name: str) -> bool:
         for card in self.cards:
-            if card.lower() == card_name.lower() :
+            if card.lower() == card_name.lower():
                 self.cards.remove(card_name)
                 return True
         return False
-
 
     def shuffle(self) -> None:
         random.shuffle(self.cards)
@@ -56,9 +54,5 @@ class Deck:
             "creatures": creatures,
             "spells": spells,
             "artifacts": artifacts,
-            "avg_cost": round(avg_cost , 1)
+            "avg_cost": round(avg_cost, 1),
         }
-
-
-
-
