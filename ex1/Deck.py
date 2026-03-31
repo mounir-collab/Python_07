@@ -3,12 +3,13 @@ from ex0.CreatureCard import CreatureCard
 from ex1.SpellCard import SpellCard
 from ex1.ArtifactCard import ArtifactCard
 import random
+from typing import List, Dict
 
 
 class Deck:
 
     def __init__(self):
-        self.cards: list[Card] = []
+        self.cards: List[Card] = []
 
     def add_card(self, card: Card) -> None:
         if isinstance(card, Card):
@@ -30,7 +31,7 @@ class Deck:
 
         return self.cards.pop(0)
 
-    def get_deck_stats(self) -> dict:
+    def get_deck_stats(self) -> Dict:
         total_cards = len(self.cards)
         creatures = 0
         spells = 0
