@@ -3,6 +3,7 @@ from ex2.Combatable import Combatable
 from ex2.Magical import Magical
 from enum import Enum
 import random
+from typing import Dict, List
 
 
 class itt:
@@ -23,10 +24,10 @@ class EliteCard(Card, Combatable, Magical):
         self.defense = defense
         self.mana = mana
 
-    def play(self, game_state: dict) -> dict:
+    def play(self, game_state: Dict) -> Dict:
         return {"card": self.name, "status": "played", "type": "Elite"}
 
-    def attack(self, target) -> dict:
+    def attack(self, target) -> Dict:
         damage = self.attack_power
         return {
             "attacker": self.name,
@@ -35,7 +36,7 @@ class EliteCard(Card, Combatable, Magical):
             "combat_type": random.choice(list(CombatType)).value,
         }
 
-    def defend(self, incoming_damage) -> dict:
+    def defend(self, incoming_damage) -> Dict:
         damage_blocked = min(self.defense, incoming_damage)
         damage_taken = incoming_damage - damage_blocked
 
@@ -46,11 +47,11 @@ class EliteCard(Card, Combatable, Magical):
             "still_alive": True,
         }
 
-    def get_combat_stats(self) -> dict:
+    def get_combat_stats(self) -> Dict:
 
         return {"attack": self.attack_power, "defense": self.defense}
 
-    def cast_spell(self, spell_name: str, targets: list) -> dict:
+    def cast_spell(self, spell_name: str, targets: List) -> Dict:
 
         mana_cost = 4
 

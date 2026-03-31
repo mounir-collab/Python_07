@@ -1,6 +1,7 @@
 from ex2.EliteCard import EliteCard
 
-if __name__ == "__main__":
+
+def main() -> None:
 
     print("\n=== DataDeck Ability System ===")
 
@@ -24,3 +25,11 @@ if __name__ == "__main__":
     print("Mana channel:", mana_result)
 
     print("\nMultiple interface implementation successful!")
+
+
+if __name__ == "__main__":
+
+    try:
+        main()
+    except Exception as err:
+        print("Something wrong : ", err)
