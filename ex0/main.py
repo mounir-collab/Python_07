@@ -17,7 +17,7 @@ def main() -> None:
     print("Play result: ", fire_dragon.play({"mana": 6}))
 
     print("\nFire Dragon attacks Goblin Warrior:")
-    target = CreatureCard("Goblin Warrior")
+    target = CreatureCard("Goblin Warrior" , 4 , Rarity.Common.value , 2 , 5)
     print(f"Attack result: {fire_dragon.attack_target(target)}")
 
     print("\nTesting insufficient mana (3 available):")

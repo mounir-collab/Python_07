@@ -6,10 +6,10 @@ class CreatureCard(Card):
     def __init__(
         self,
         name: str,
-        cost: int = 0,
-        rarity: str = None,
-        attack: int = 0,
-        health: int = 0,
+        cost: int ,
+        rarity: str ,
+        attack: int ,
+        health: int ,
     ) -> None:
         super().__init__(name, cost, rarity)
         self.attack = attack
