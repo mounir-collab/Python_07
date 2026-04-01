@@ -12,8 +12,11 @@ class CreatureCard(Card):
         health: int ,
     ) -> None:
         super().__init__(name, cost, rarity)
+        if attack <= 0 or health <= 0:
+            raise ValueError("Attack and health must be positive integers")
         self.attack = attack
         self.health = health
+        
 
     def play(self, game_state: Dict) -> Dict[str, Union[str, int]]:
         if game_state.get("mana"):
