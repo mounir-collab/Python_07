@@ -6,11 +6,6 @@ import random
 from typing import Dict, List
 
 
-class itt:
-    aa = 12
-    bb = 33
-
-
 class CombatType(Enum):
     MELEE = "melee"
     RANGED = "ranged"

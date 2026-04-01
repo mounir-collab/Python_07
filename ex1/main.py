@@ -3,7 +3,8 @@ from ex1.Deck import Deck
 from ex1.ArtifactCard import ArtifactCard
 from ex1.SpellCard import SpellCard
 
-if __name__ == "__main__":
+
+def main():
 
     print("\n=== DataDeck Deck Builder ===")
 
@@ -40,3 +41,10 @@ if __name__ == "__main__":
 
     print("\nPolymorphism in action: "
           "Same interface, different card behaviors!")
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except Exception as err:
+        print("Error : ", err)
